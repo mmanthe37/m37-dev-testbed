@@ -2,6 +2,24 @@
 
 Welcome to my personal development laboratory! This repository serves as a comprehensive testbed for experimenting with new technologies, prototyping ideas, and managing various development projects.
 
+## ✨ NEW: Personal Dev Admin Platform
+
+**A comprehensive, Azure-like administration platform for managing all your development resources in one place!**
+
+👉 **[Launch Admin Platform](admin-platform/)** - Unified dashboard for projects, Azure resources, GitHub repos, credentials, learning progress, and deployments.
+
+Features:
+- 📊 **Dashboard** - Real-time overview of all development activities
+- 🚀 **Projects Portfolio** - Track and manage all your projects
+- ☁️ **Azure Resources** - Monitor subscriptions and cloud infrastructure
+- 🐙 **GitHub Integration** - Repository stats and activity
+- 🛠️ **Tech Stack Inventory** - Complete technology proficiency tracker
+- 🔐 **Credentials Manager** - Secure API key tracking and rotation alerts
+- 📚 **Learning Progress** - Microsoft Learn XP and certifications
+- 🚢 **Deployments** - Monitor apps across Vercel, Azure, and Netlify
+
+[**→ Get Started with the Admin Platform**](admin-platform/QUICK_START.md)
+
 ## 🎯 Purpose
 
 This repository is my digital playground where I:
@@ -11,11 +29,13 @@ This repository is my digital playground where I:
 - **Build** applications across different platforms and languages
 - **Test** integrations and workflows
 - **Document** learnings and insights
+- **Manage** development resources through a unified admin platform
 
 ## 📁 Repository Structure
 
 ```
 m37-dev-testbed/
+├── admin-platform/  # 🆕 Personal Dev Admin Platform (Azure-like dashboard)
 ├── experiments/     # Quick experiments and technology explorations
 ├── prototypes/      # Working prototypes and proof-of-concepts
 ├── apps/            # Full-fledged applications under development

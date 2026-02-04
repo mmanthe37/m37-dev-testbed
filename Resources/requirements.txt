@@ -1,0 +1,14 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# AI & Embeddings
+openai
+pinecone-client
+
+# Data Validation & Environment
+pydantic
+pydantic-settings
+
+# Utilities
+python-dotenv

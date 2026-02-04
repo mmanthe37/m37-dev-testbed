@@ -1,0 +1,15 @@
+# Core dependencies
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Optional: Data processing
+# pandas>=2.0.0
+# numpy>=1.24.0
+
+# Optional: Database
+# sqlalchemy>=2.0.0
+# psycopg2-binary>=2.9.0
+
+# Optional: CLI enhancements
+# click>=8.1.0
+# rich>=13.0.0

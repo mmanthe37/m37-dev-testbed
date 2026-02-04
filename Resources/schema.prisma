@@ -1,0 +1,79 @@
+// This schema is a mirror of the one in vehicle-service to ensure consistency.
+// All migrations should be managed from a single service (e.g., vehicle-service)
+// to maintain a linear history.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// --- User Model ---
+model User {
+  id String @id @default(uuid())
+
+  email          String?  @unique
+  hashedPassword String?
+  displayName    String?
+  walletAddress String? @unique
+  avatarUrl        String?
+  tier             String   @default("free")
+  stripeCustomerId String?  @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  lastLoginAt DateTime?
+
+  vehicles     Vehicle[]
+  subscriptions Subscription[]
+}
+
+// --- Vehicle Model ---
+model Vehicle {
+  id String @id @default(uuid())
+  owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  ownerId String
+
+  vin      String?  @unique
+  year     Int
+  make     String
+  model    String
+  trim     String?
+  nickname String?
+  engine       String?
+  transmission String?
+  driveType    String?
+  fuelType     String?
+  bodyStyle    String?
+  color        String?
+  mileage      Int?
+  imageUrl  String?
+  manualId  String?
+  tokenId         Int?
+  tokenStandard   String?
+  contractAddress String?
+  registrationMethod String
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([ownerId])
+}
+
+// --- Subscription Model ---
+model Subscription {
+  id String @id @default(uuid())
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  tier String
+  status String
+  stripeSubscriptionId String?  @unique
+  stripePriceId        String?
+  stripeCurrentPeriodEnd DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}

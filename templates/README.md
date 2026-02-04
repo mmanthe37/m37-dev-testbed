@@ -8,7 +8,7 @@ This directory contains starter templates and boilerplates for common project ty
 A modern React application with Next.js App Router, TypeScript, and Tailwind CSS.
 
 **Features:**
-- Next.js 14+ with App Router
+- Next.js 15+ with App Router
 - TypeScript for type safety
 - Tailwind CSS for styling
 - ESLint and Prettier

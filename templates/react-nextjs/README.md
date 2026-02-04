@@ -4,7 +4,7 @@ A modern React application template with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- ⚡️ **Next.js 14+** - App Router with React Server Components
+- ⚡️ **Next.js 15+** - App Router with React Server Components
 - 🔷 **TypeScript** - Type safety and better developer experience
 - 🎨 **Tailwind CSS** - Utility-first CSS framework
 - 📱 **Responsive Design** - Mobile-first approach

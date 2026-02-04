@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+- Updated Next.js version in React/Next.js template from 14.0.0 to 15.0.8 to address DoS vulnerability (CVE related to HTTP request deserialization in React Server Components)
+
 ### Added
 - Initial repository structure with organized directories
   - `/experiments` - For quick technology explorations

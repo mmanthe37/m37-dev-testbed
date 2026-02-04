@@ -142,7 +142,7 @@ This testbed supports multiple technology stacks:
 
 Ready-to-use templates are available in `/templates`:
 
-- **react-nextjs/** - React with Next.js App Router, TypeScript, Tailwind CSS
+- **react-nextjs/** - React with Next.js 15+ App Router, TypeScript, Tailwind CSS
 - **swift-swiftui/** - SwiftUI app with MVVM architecture
 - **python-script/** - Python script with proper structure and best practices
 

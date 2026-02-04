@@ -1,0 +1,128 @@
+name: Lint Code
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  lint-javascript:
+    name: Lint JavaScript/TypeScript
+    runs-on: ubuntu-latest
+    if: |
+      contains(github.event.head_commit.message, 'js') ||
+      contains(github.event.head_commit.message, 'ts') ||
+      contains(github.event.head_commit.message, 'react') ||
+      contains(github.event.head_commit.message, 'node') ||
+      github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+        continue-on-error: true
+      
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: true
+
+  lint-python:
+    name: Lint Python
+    runs-on: ubuntu-latest
+    if: |
+      contains(github.event.head_commit.message, 'python') ||
+      contains(github.event.head_commit.message, 'py') ||
+      github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 black isort
+      
+      - name: Lint with flake8
+        run: |
+          # Stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Exit-zero treats all errors as warnings
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        continue-on-error: true
+      
+      - name: Check formatting with black
+        run: black --check .
+        continue-on-error: true
+      
+      - name: Check imports with isort
+        run: isort --check-only .
+        continue-on-error: true
+
+  lint-swift:
+    name: Lint Swift
+    runs-on: macos-latest
+    if: |
+      contains(github.event.head_commit.message, 'swift') ||
+      contains(github.event.head_commit.message, 'ios') ||
+      github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Install SwiftLint
+        run: brew install swiftlint
+      
+      - name: Run SwiftLint
+        run: |
+          if [ -f .swiftlint.yml ]; then
+            swiftlint --config .swiftlint.yml
+          else
+            swiftlint
+          fi
+        continue-on-error: true
+
+  markdown-lint:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Lint Markdown files
+        uses: DavidAnson/markdownlint-cli2-action@v14
+        with:
+          globs: '**/*.md'
+        continue-on-error: true
+
+  status-check:
+    name: Linting Status
+    runs-on: ubuntu-latest
+    needs: [lint-javascript, lint-python, lint-swift, markdown-lint]
+    if: always()
+    
+    steps:
+      - name: Check status
+        run: |
+          echo "Linting jobs completed"
+          echo "JavaScript/TypeScript: ${{ needs.lint-javascript.result }}"
+          echo "Python: ${{ needs.lint-python.result }}"
+          echo "Swift: ${{ needs.lint-swift.result }}"
+          echo "Markdown: ${{ needs.markdown-lint.result }}"

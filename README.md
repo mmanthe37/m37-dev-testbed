@@ -1,168 +1,192 @@
-# How to run the completed project
+# M37 Dev Testbed 🧪
 
-## Prerequisites
+Welcome to my personal development laboratory! This repository serves as a comprehensive testbed for experimenting with new technologies, prototyping ideas, and managing various development projects.
 
-To run the script in this folder, you need the following:
+## 🎯 Purpose
 
-- The [Microsoft Graph PowerShell SDK](https://docs.microsoft.com/powershell/microsoftgraph/installation) installed on your development machine. (**Note:** This tutorial was written with PowerShell 7.2.2 and Microsoft Graph PowerShell SDK version 1.9.5. The steps in this guide may work with other versions, but that has not been tested.)
-- A Microsoft work or school account.
+This repository is my digital playground where I:
+- **Experiment** with new frameworks, libraries, and technologies
+- **Prototype** innovative ideas and proof-of-concepts
+- **Research** technical solutions and best practices
+- **Build** applications across different platforms and languages
+- **Test** integrations and workflows
+- **Document** learnings and insights
 
-If you don't have a Microsoft account, you can [sign up for the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) to get a free Microsoft 365 subscription.
+## 📁 Repository Structure
 
-## Register an application
-
-You can register an application using the Azure Active Directory admin center, or by using the [Microsoft Graph PowerShell SDK](https://docs.microsoft.com/graph/powershell/get-started).
-
-**NOTE:** If you downloaded this code from [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start), an app registration has already been created for you. However, if you want to use the app-only portion of this sample, you will need to modify the app registration as specified in [Configure app-only auth (AAD admin center)](#configure-app-only-auth-aad-admin-center) or [Configure app-only auth (PowerShell)](#configure-app-only-auth-powershell).
-
-### Azure Active Directory admin center
-
-1. Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com) and login using a **personal account** (aka: Microsoft Account) or **Work or School Account**.
-
-1. Select **Azure Active Directory** in the left-hand navigation, then select **App registrations** under **Manage**.
-
-1. Select **New registration**. Enter a name for your application, for example, `PowerShell Graph Tutorial`.
-
-1. Set **Supported account types** as desired. The options are:
-
-    | Option | Who can sign in? |
-    |--------|------------------|
-    | **Accounts in this organizational directory only** | Only users in your Microsoft 365 organization |
-    | **Accounts in any organizational directory** | Users in any Microsoft 365 organization (work or school accounts) |
-    | **Accounts in any organizational directory ... and personal Microsoft accounts** | Users in any Microsoft 365 organization (work or school accounts) and personal Microsoft accounts |
-
-1. Leave **Redirect URI** empty.
-
-1. Select **Register**. On the application's **Overview** page, copy the value of the **Application (client) ID** and save it, you will need it in the next step. If you chose **Accounts in this organizational directory only** for **Supported account types**, also copy the **Directory (tenant) ID** and save it.
-
-1. Select **Authentication** under **Manage**. Locate the **Advanced settings** section and change the **Allow public client flows** toggle to **Yes**, then choose **Save**.
-
-#### Configure app-only auth (AAD admin center)
-
-> **Note:** This section requires a work/school account with the Global administrator role. You only need to complete these steps if you plan on using the app-only portions of this sample.
-
-##### Create a self-signed certificate
-
-The Microsoft Graph PowerShell SDK requires a certificate for app-only authentication. For development purposes, a self-signed certificate is sufficient. You need a certificate with the private key installed on the local machine, and the public key exported in a .CER, .PEM, or .CRT file.
-
-###### Windows
-
-On Windows, you can use the [pki PowerShell module](https://docs.microsoft.com/powershell/module/pki) to generate the certificate.
-
-```powershell
-$cert = New-SelfSignedCertificate -Subject "CN=PowerShell App-Only" -CertStoreLocation `
-  "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 `
-  -KeyAlgorithm RSA -HashAlgorithm SHA256
-Export-Certificate -Cert $cert -FilePath "./PowerShellAppOnly.cer"
+```
+m37-dev-testbed/
+├── experiments/     # Quick experiments and technology explorations
+├── prototypes/      # Working prototypes and proof-of-concepts
+├── apps/            # Full-fledged applications under development
+├── research/        # Research notes, findings, and documentation
+├── scripts/         # Utility scripts and automation tools
+├── docs/            # Project documentation and guides
+├── templates/       # Project templates and boilerplates
+│   ├── react-nextjs/    # React/Next.js starter template
+│   ├── swift-swiftui/   # Swift/SwiftUI starter template
+│   └── python-script/   # Python script template
+└── README.md        # You are here!
 ```
 
-###### Linux/MacOS
+## 🚀 Getting Started
 
-On Linux or MacOS, you can use [OpenSSL](https://www.openssl.org/) to generate the private and public keys, then use PowerShell to install the private key into a certificate store readable by PowerShell.
+### Prerequisites
 
-1. Generate a new X509 certificate using the following command.
+Depending on what you're working with, you may need:
+- **Node.js** (v18+) and npm/yarn for JavaScript/TypeScript projects
+- **Python** (3.8+) for Python projects
+- **Swift** and Xcode for iOS/macOS projects
+- **Git** for version control
 
-    ```bash
-    openssl req -x509 -newkey rsa:2048 -sha256 -days 365 -keyout powershell.pem -out powershell.crt -subj "/CN=PowerShell App-Only"
-    ```
+### Quick Start
 
-1. OpenSSL prompts you for a PEM pass phrase. Enter a pass phrase you will remember.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/mmanthe37/m37-dev-testbed.git
+   cd m37-dev-testbed
+   ```
 
-1. Create a PFX file using the following command.
+2. **Choose your path**
+   - Start a new experiment in `/experiments`
+   - Use a template from `/templates` to kickstart a project
+   - Explore existing prototypes in `/prototypes`
 
-    ```bash
-    openssl pkcs12 -export -out powershell.pfx -inkey powershell.pem -in powershell.crt
-    ```
+3. **Use the templates**
+   ```bash
+   # Copy a template to start a new project
+   cp -r templates/react-nextjs experiments/my-new-project
+   cd experiments/my-new-project
+   npm install
+   ```
 
-1. OpenSSL prompts you for the pass phrase for **powershell.pem**, enter the pass phrase you used in the previous step.
+## 📚 Project Categories
 
-1. OpenSSL prompts you for an export password. Enter a password you will remember.
+### Experiments 🧬
+Quick tests and explorations of new technologies. These are typically:
+- Short-lived investigations
+- Technology feasibility tests
+- Learning exercises
+- API integrations tests
 
-1. Open PowerShell and run the following commands, replacing *&lt;export-password&gt;* with the export password you used in the previous step.
+### Prototypes 🛠️
+More developed proof-of-concepts that demonstrate:
+- Working implementations
+- Feature demonstrations
+- Architecture explorations
+- Integration patterns
 
-    ```powershell
-    using namespace System.Security.Cryptography.X509Certificates
-    $store = [X509Store]::new('My', 'CurrentUser', 'ReadWrite')
-    $store.Add([X509Certificate2]::new('./powershell.pfx', '<export-password>', [X509KeyStorageFlags]::PersistKeyS
-    et))
-    $store.Dispose()
-    ```
+### Apps 📱
+Full applications under active development:
+- Production-ready or near-production code
+- Complete feature sets
+- Proper architecture and testing
+- Deployment configurations
 
-##### Update the app registration
+### Research 📖
+Documentation and findings including:
+- Technical research notes
+- Best practices documentation
+- Performance benchmarks
+- Technology comparisons
 
-1. In the AAD Admin Center, select **API permissions** under **Manage**.
+### Scripts ⚙️
+Utility scripts and tools:
+- Build automation
+- Deployment scripts
+- Data processing tools
+- Development utilities
 
-1. Remove the default **User.Read** permission under **Configured permissions** by selecting the ellipses (**...**) in its row and selecting **Remove permission**.
+### Docs 📄
+Comprehensive documentation:
+- Project guides
+- Setup instructions
+- API documentation
+- Architecture diagrams
 
-1. Select **Add a permission**, then **Microsoft Graph**.
+## 🛠️ Tech Stack
 
-1. Select **Application permissions**.
+This testbed supports multiple technology stacks:
 
-1. Select **User.Read.All**, then select **Add permissions**.
+### Web Development
+- **React** / **Next.js** - Modern web applications
+- **TypeScript** - Type-safe JavaScript
+- **Expo** - React Native development
+- **Node.js** - Backend services
 
-1. Select **Grant admin consent for...**, then select **Yes** to provide admin consent for the selected permission.
+### Mobile Development
+- **Swift** / **SwiftUI** - iOS/macOS native apps
+- **React Native** - Cross-platform mobile apps
 
-1. Select **Certificates and secrets** under **Manage**, then select **Certificates**.
+### Backend & Scripts
+- **Python** - Scripting and automation
+- **Go** - High-performance services
+- **PowerShell** - Windows automation
 
-1. Select **Upload certificate**. Upload the **PowerShellAppOnly.cer** or **powershell.crt** file you created in the previous step, then select **Add**.
+### DevOps & Infrastructure
+- **Docker** - Containerization
+- **GitHub Actions** - CI/CD
+- **Terraform** - Infrastructure as Code
+- **Azure** - Cloud services
 
-### PowerShell
+## 🔧 Development Workflow
 
-1. Open PowerShell and run the [RegisterAppForUserAuth.ps1](RegisterAppForUserAuth.ps1) file with the following command, replacing *&lt;audience-value&gt;* with the desired value (see table below).
+1. **Create** - Start in `/experiments` or use a template
+2. **Develop** - Build and iterate rapidly
+3. **Test** - Use automated testing and linting
+4. **Document** - Keep notes in `/research` or `/docs`
+5. **Promote** - Move successful experiments to `/prototypes` or `/apps`
+6. **Deploy** - When ready, deploy from `/apps`
 
-    > **Note:** The RegisterAppForUserAuth.ps1 script requires a work/school account with the Application administrator, Cloud application administrator, or Global administrator role.
+## 📝 Templates
 
-    ```powershell
-    .\RegisterAppForUserAuth.ps1 -AppName "PowerShell Graph Tutorial" -SignInAudience <audience-value>
-    ```
+Ready-to-use templates are available in `/templates`:
 
-    | SignInAudience value | Who can sign in? |
-    |----------------------|------------------|
-    | `AzureADMyOrg` | Only users in your Microsoft 365 organization |
-    | `AzureADMultipleOrgs` | Users in any Microsoft 365 organization (work or school accounts) |
-    | `AzureADandPersonalMicrosoftAccount` | Users in any Microsoft 365 organization (work or school accounts) and personal Microsoft accounts |
-    | `PersonalMicrosoftAccount` | Only personal Microsoft accounts |
+- **react-nextjs/** - React with Next.js App Router, TypeScript, Tailwind CSS
+- **swift-swiftui/** - SwiftUI app with MVVM architecture
+- **python-script/** - Python script with proper structure and best practices
 
-1. Copy the **Client ID** and **Auth tenant** values from the script output. You will need these values in the next step.
+Each template includes:
+- Basic project structure
+- Configuration files
+- Example code
+- README with setup instructions
 
-    ```powershell
-    SUCCESS
-    Client ID: 2fb1652f-a9a0-4db9-b220-b224b8d9d38b
-    Auth tenant: common
-    ```
+## 🧪 Linting and Code Quality
 
-#### Configure app-only auth (PowerShell)
+This repository uses automated linting via GitHub Actions:
+- **ESLint** for JavaScript/TypeScript
+- **Prettier** for code formatting
+- **SwiftLint** for Swift code (when applicable)
+- **Black** for Python code (when applicable)
 
-Currently it is not possible to add a certificate to the existing app registration using Microsoft Graph. Please follow the steps in [Configure app-only auth (AAD admin center)](#configure-app-only-auth-aad-admin-center).
-
-## Configure the sample
-
-1. Open [settings.json](./graphtutorial/settings.json) and update the values according to the following table.
-
-    | Setting | Value |
-    |---------|-------|
-    | `clientId` | The client ID of your app registration |
-    | `clientCertificate` | The subject of the certificate generated in [Create a self-signed certificate](#create-a-self-signed-certificate) (only needed if doing app-only). For example, `CN=PowerShell App-Only`. |
-    | `tenantId` | The tenant ID of your organization (only needed if doing app-only) |
-    | `authTenant` | If you chose the option to only allow users in your organization to sign in, change this value to your tenant ID. Otherwise leave as `common`. |
-
-## Run the sample
-
-In PowerShell, navigate to the project directory and run the following command.
-
-```Shell
-./GraphTutorial.ps1
+Run linting locally:
+```bash
+npm run lint          # For JavaScript/TypeScript projects
+python -m black .     # For Python projects
 ```
 
-**Note:** The scripts included in this sample are not digitally signed. Attempting to run them may result in the following error:
+## 🤝 Contributing
 
-```powershell
-.\GraphTutorial.ps1: File C:\Source\GraphTutorial.ps1 cannot be loaded. The file C:\Source\GraphTutorial.ps1 is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
-```
+This is a personal development testbed, but feel free to:
+- Fork and explore
+- Suggest improvements via issues
+- Share ideas and feedback
 
-If you get this error, use the following commands to unblock the file and temporarily allow unsigned scripts in the current PowerShell session. This will not change the default execution policy, the setting is only effective in the current session.
+## 📜 License
 
-```powershell
-Unblock-File .\GraphTutorial.ps1
-Set-ExecutionPolicy Unrestricted -Scope Process
-```
+This is a personal development repository. Individual projects may have their own licenses.
+
+## 🔗 Links
+
+- [GitHub Profile](https://github.com/mmanthe37)
+- [Issues](https://github.com/mmanthe37/m37-dev-testbed/issues)
+- [Discussions](https://github.com/mmanthe37/m37-dev-testbed/discussions)
+
+## 📊 Status
+
+This repository is actively maintained and continuously evolving with new experiments and projects.
+
+---
+
+**Happy Coding! 🚀**

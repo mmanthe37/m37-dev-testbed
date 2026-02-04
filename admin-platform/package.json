@@ -1,0 +1,32 @@
+{
+  "name": "m37-dev-admin-platform",
+  "version": "1.0.0",
+  "description": "Personal Development Administration Platform for mmanthe37",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@azure/arm-resources": "^5.2.0",
+    "@azure/identity": "^4.0.1",
+    "@azure/arm-subscriptions": "^5.1.0",
+    "@octokit/rest": "^20.0.2",
+    "date-fns": "^3.3.1",
+    "recharts": "^2.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "typescript": "^5.3.3",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  }
+}

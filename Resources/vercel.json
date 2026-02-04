@@ -1,0 +1,59 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/web/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "services/api-gateway/src/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "services/auth-service/src/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "services/vehicle-service/src/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "services/payment-service/src/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "services/chat-service/src/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/v1/auth/:path*",
+      "destination": "/services/auth-service/src/index.ts"
+    },
+    {
+      "source": "/api/v1/vehicles/:path*",
+      "destination": "/services/vehicle-service/src/index.ts"
+    },
+    {
+      "source": "/api/v1/payments/:path*",
+      "destination": "/services/payment-service/src/index.ts"
+    },
+    {
+      "source": "/api/v1/chat/:path*",
+      "destination": "/services/chat-service/src/main.py"
+    },
+    {
+      "source": "/api/v1/:path*",
+      "destination": "/services/api-gateway/src/index.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/apps/web/index.html"
+    }
+  ]
+}

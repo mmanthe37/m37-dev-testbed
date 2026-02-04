@@ -1,0 +1,226 @@
+{
+  "Attachments": true,
+  "Progress": {
+    "completedLearningItems": [
+      {
+        "title": "learn.wwl.generate-images-azure-openai.introduction",
+        "type": "unit",
+        "completedAt": "2025-10-24T02:15:12.541621Z"
+      },
+      {
+        "title": "learn.wwl.generate-images-azure-openai.what-is-dall-e",
+        "type": "unit",
+        "completedAt": "2025-10-24T02:15:15.7487252Z"
+      },
+      {
+        "title": "learn.wwl.generate-images-azure-openai.dall-e-in-openai-studio",
+        "type": "unit",
+        "completedAt": "2025-10-24T02:15:20.5469673Z"
+      },
+      {
+        "title": "learn.wwl.generate-images-azure-openai.dall-e-rest-api",
+        "type": "unit",
+        "completedAt": "2025-10-24T02:15:27.3142128Z"
+      },
+      {
+        "title": "learn.wwl.generate-images-azure-openai.exercise-use-dall-e",
+        "type": "unit",
+        "completedAt": "2025-10-24T02:15:38.8065848Z"
+      }
+    ],
+    "learningPathPasses": [],
+    "moduleAssessments": []
+  },
+  "XP": {
+    "xp": {
+      "docsId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+      "totalXp": 500,
+      "currentLevel": 1,
+      "currentLevelLow": 0,
+      "currentLevelHigh": 1799,
+      "currentLevelPointsEarned": 500,
+      "nextLevel": 2,
+      "pointsUntilNextLevel": 1300,
+      "achievementCategories": {
+        "Unknown": 0,
+        "Modules": 0,
+        "Courses": 0,
+        "Qna": 0,
+        "Challenges": 0,
+        "Events": 0,
+        "LearningPaths": 0,
+        "Plans": 0,
+        "Special": 0
+      }
+    },
+    "achievements": []
+  },
+  "NextSteps": null,
+  "Q&A": {
+    "docsId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+    "questions": [],
+    "answers": [],
+    "comments": []
+  },
+  "Lists": {
+    "userId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+    "lists": [
+      {
+        "id": "bookmarks",
+        "userId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+        "name": "Bookmarks",
+        "description": "",
+        "type": "bookmarks",
+        "lastModified": "2025-10-24T01:02:42+00:00",
+        "totalItems": 1,
+        "items": [
+          {
+            "id": "bookmarks_docs-F59411DDB427C220FC4FB7724721CB03",
+            "listId": "bookmarks",
+            "type": "docs",
+            "data": {
+              "url": "/credentials/certifications/github-foundations/",
+              "rawUrl": "https://learn.microsoft.com/en-us/credentials/certifications/github-foundations/",
+              "title": "GitHub Foundations - Certifications",
+              "docId": "5e243aae-ffd1-0f38-7977-05109bdd35a5",
+              "docVIId": "5e243aae-ffd1-0f38-7977-05109bdd35a5",
+              "platformId": "8c33102b-8980-ab94-60b2-fc7d7a816c61",
+              "pageType": "learn",
+              "pageKind": "certification",
+              "uid": "certification.github-foundations",
+              "challengeId": null,
+              "eventUid": "",
+              "durationInMillisecond": null,
+              "showId": ""
+            },
+            "lastModified": "2025-10-24T01:02:42+00:00"
+          }
+        ],
+        "itemCount": 1,
+        "sections": [],
+        "sectionCount": 0,
+        "isPrivate": false,
+        "isOfficial": false,
+        "shouldLocalize": false,
+        "isLocalized": false,
+        "isFallbackLocale": false,
+        "showUserDisplayName": false,
+        "moduleCount": 0,
+        "completedModuleCount": 0,
+        "remainingDuration": 0,
+        "totalDuration": 0
+      }
+    ],
+    "createdSkillingPlans": {
+      "userId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+      "skillingPlanFilter": 1,
+      "skillingPlans": [],
+      "count": 0
+    },
+    "createdLearnChallenges": {
+      "userId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+      "learnChallengeFilter": "all",
+      "challenges": [],
+      "count": 0
+    },
+    "userRegistrations": {
+      "id": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+      "registrations": [],
+      "lastModified": "2025-10-24T01:00:25+00:00"
+    }
+  },
+  "Certifications": null,
+  "VerifiableCredentials": {
+    "docsId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+    "userCredentials": []
+  },
+  "SkillAssessment": null,
+  "TechProfile": {
+    "email": "mmanthe37@live.seminolestate.edu",
+    "locale": "en-us",
+    "country": "US",
+    "contactPointTopicSetting": "OptInExplicit",
+    "isInstructor": false,
+    "isChallengeAdmin": false,
+    "isQnaModerator": false,
+    "source": "docs",
+    "authenticationModes": [
+      {
+        "id": "79d61232-2193-4bfc-b4b8-a9f492e37180",
+        "type": "AAD",
+        "tenantId": "287ac9b9-5d68-49ae-9502-97a2d50dd6bc",
+        "upn": "mmanthe37@live.seminolestate.edu",
+        "oid": "79d61232-2193-4bfc-b4b8-a9f492e37180",
+        "dateAcceptedPrivacyNotice": "2025-10-24T00:57:23.9553585+00:00",
+        "dateAdded": "2025-10-24T00:57:23.9553586+00:00"
+      },
+      {
+        "id": "00037FFEAC568BB5",
+        "type": "MSA",
+        "tenantId": "9188040d-6c67-4c5b-b112-36a304b66dad",
+        "upn": "michaelamanthe2@gmail.com",
+        "oid": "00000000-0000-0000-a737-997064900d72",
+        "dateAcceptedPrivacyNotice": "2025-10-24T00:57:57.5160033+00:00",
+        "dateAdded": "2025-10-24T00:57:57.5160037+00:00"
+      }
+    ],
+    "transcriptSettings": {
+      "publicLink": {
+        "showModules": true,
+        "showLegalName": true,
+        "showMCID": true,
+        "showContactEmail": true
+      },
+      "print": {
+        "showModules": true,
+        "showLegalName": true,
+        "showMCID": true,
+        "showContactEmail": true
+      }
+    },
+    "certificationSettings": {
+      "print": {
+        "showLegalName": true,
+        "showMCID": true,
+        "showContactEmail": true
+      }
+    },
+    "qnaEmailPreferences": {
+      "allEmail": true,
+      "autoFollowAsked": true,
+      "autoFollowAnswered": true,
+      "autoFollowCommented": true,
+      "autoFollowTagged": true,
+      "emailEventSettings": {
+        "newMention": "instant",
+        "newModeration": "instant",
+        "answerPosted": "instant",
+        "answerAccepted": "instant",
+        "commentPosted": "instant",
+        "newPrivateMessage": "instant",
+        "questionUpdated": "instant",
+        "questionPosted": "instant",
+        "unansweredQuestions": "off",
+        "newFollower": "instant",
+        "answerUpdated": "instant"
+      }
+    },
+    "sharingId": "BBC40C17F7B258EB",
+    "legalName": {
+      "first": "Michael",
+      "middle": "Andrew",
+      "last": "Manthe"
+    },
+    "userId": "6d28bbb2-e7c0-4413-87c8-5c2218b99b71",
+    "userName": "Mmanthe37",
+    "displayName": "Mmanthe37",
+    "isPrivate": false,
+    "affiliations": [],
+    "followerCount": 0,
+    "followingCount": 0,
+    "answersAccepted": 0,
+    "reputationPoints": 0,
+    "createdOn": "10/24/2025 12:57:23 AM"
+  },
+  "Assessments": null
+}

@@ -1,0 +1,14 @@
+src/
+├── api/                  # Centralized API call functions
+├── components/
+│   ├── layout/             # Main layout components (Header, Sidebar, Footer)
+│   └── ui/                 # Reusable UI primitives (from shadcn/ui)
+├── config/               # Web3 provider configuration
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility functions and library initializations
+├── pages/                # Route components
+├── providers/            # React Context providers (Theme, Auth, Web3)
+├── services/             # Abstractions for backend services
+├── store/                # Zustand state management stores
+├── App.tsx               # Main application component with routing
+└── main.tsx              # Application entry point
